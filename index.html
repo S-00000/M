@@ -1,22 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ייעוץ ארגוני | מייס מסאלחה</title>
+  <title>מייס מסאלחה | ייעוץ ארגוני</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #ffffff;
+      background: #ffffff;
+      color: #1a1a1a;
     }
 
     header {
-      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      background: linear-gradient(135deg, #d4af37, #ffffff);
       padding: 80px 20px;
       text-align: center;
+      color: #1a1a1a;
     }
 
     header h1 {
@@ -26,15 +28,15 @@
 
     header p {
       font-size: 18px;
-      color: #cbd5e1;
+      color: #333;
     }
 
     .btn {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 25px;
-      background: #38bdf8;
-      color: #0f172a;
+      background: #d4af37;
+      color: #fff;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
@@ -47,91 +49,116 @@
     }
 
     h2 {
-      color: #38bdf8;
-      margin-bottom: 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      color: #d4af37;
     }
 
     .card {
-      background: #1e293b;
+      background: #fff;
+      border: 1px solid #d4af37;
       padding: 20px;
       border-radius: 12px;
+      margin-bottom: 15px;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      background: #0b1220;
-      color: #94a3b8;
+      background: #f5f5f5;
+      color: #555;
     }
 
-    /* ⭐ השם בצד */
-    .side-name {
+    /* מסך סיסמה */
+    #login {
       position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(30, 41, 59, 0.9);
-      color: #38bdf8;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 16px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    #login input {
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    #login button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #d4af37;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #content {
+      display: none;
     }
   </style>
 </head>
 
 <body>
 
+<!-- מסך סיסמה -->
+<div id="login">
+  <h2>הכניסה לאתר מוגנת</h2>
+  <p>הכנס סיסמה כדי להמשיך</p>
+  <input type="password" id="pass" placeholder="סיסמה">
+  <button onclick="checkPassword()">כניסה</button>
+</div>
+
+<!-- תוכן האתר -->
+<div id="content">
+
   <header>
-    <h1>ייעוץ ארגוני מתקדם</h1>
-    <p>ליווי עסקים לצמיחה, התייעלות ושיפור ביצועים</p>
-    <a class="btn" href="#contact">קבל ייעוץ עכשיו</a>
+    <h1>מייס מסאלחה</h1>
+    <p>יועצת ארגונית | ליווי תהליכי שינוי וצמיחה</p>
+    <a class="btn" href="#contact">יצירת קשר</a>
   </header>
 
   <section>
-    <h2>מה אנחנו עושים</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>שיפור תהליכים</h3>
-        <p>ניתוח עומק של תהליכים ארגוניים והפיכתם ליעילים יותר.</p>
-      </div>
+    <h2>תחומי התמחות</h2>
 
-      <div class="card">
-        <h3>פיתוח הנהלה</h3>
-        <p>הדרכות וליווי מנהלים לקבלת החלטות חכמות יותר.</p>
-      </div>
-
-      <div class="card">
-        <h3>צמיחה עסקית</h3>
-        <p>בניית אסטרטגיה שמביאה תוצאות אמיתיות בשטח.</p>
-      </div>
-    </div>
+    <div class="card">ייעוץ ארגוני ושיפור תהליכים</div>
+    <div class="card">פיתוח והכשרת מנהלים</div>
+    <div class="card">ליווי שינויים ארגוניים</div>
+    <div class="card">שיפור ביצועים וצמיחה עסקית</div>
   </section>
 
   <section id="contact">
     <h2>יצירת קשר</h2>
-    <p>רוצה לשפר את הארגון שלך? אני כאן לעזור.</p>
-    <p>📞 טלפון: 050-0000000</p>
-    <p>✉️ אימייל: example@email.com</p>
+    <p>📞 052-4491865</p>
+    <p>✉️ maysmassalha@hotmail.com</p>
   </section>
 
   <footer>
     © כל הזכויות שמורות | מייס מסאלחה - ייעוץ ארגוני
   </footer>
 
-  <!-- ⭐ השם בצד -->
-  <div class="side-name">
-    היועצת הארגונית<br>
-    מייס מסאלחה
-  </div>
+</div>
+
+<script>
+  function checkPassword() {
+    let password = document.getElementById("pass").value;
+
+    if (password === "1234") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    } else {
+      alert("סיסמה שגויה");
+    }
+  }
+</script>
 
 </body>
 </html>
