@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -8,256 +9,233 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial;
-      background: #0b0b0b;
-      color: white;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
       scroll-behavior: smooth;
     }
 
+    /* HEADER */
     header {
-      background: linear-gradient(135deg, #000, #1a1a1a);
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #ffffff, #f7f7f7);
+      padding: 90px 20px;
       text-align: center;
-      border-bottom: 2px solid #d4af37;
+      border-bottom: 3px solid #d4af37;
     }
 
-    h1 { color: #d4af37; font-size: 44px; }
-    h2 { color: #d4af37; }
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
 
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    /* BUTTONS */
     .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
+      margin: 12px 8px;
+      padding: 12px 22px;
       background: #d4af37;
-      color: black;
+      color: #fff;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      cursor: pointer;
+      transition: 0.3s;
     }
 
+    .btn:hover {
+      background: #b8922e;
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
     section {
-      padding: 60px 20px;
-      max-width: 900px;
+      padding: 70px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
+    h2 {
+      color: #d4af37;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* CARDS */
     .card {
-      background: #1a1a1a;
-      border: 1px solid #d4af37;
-      padding: 15px;
-      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-right: 4px solid #d4af37;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      line-height: 1.7;
+    }
+
+    /* PROFILE */
+    .profile-box {
+      position: fixed;
+      left: 20px;
+      top: 120px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-top: 3px solid #d4af37;
+      border-radius: 18px;
+      padding: 18px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .profile-box img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #d4af37;
       margin-bottom: 10px;
+    }
+
+    .profile-box h3 {
+      margin: 5px 0;
+      color: #d4af37;
+      font-size: 18px;
+    }
+
+    .profile-box p {
+      margin: 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: Arial;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 14px;
+      background: #d4af37;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #b8922e;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      background: #000;
+      background: #fafafa;
       color: #777;
-      border-top: 1px solid #d4af37;
+      border-top: 1px solid #eee;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 12px;
-      background: #d4af37;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    /* כרטיס תמונה */
-    .profile-box {
-      position: fixed;
-      left: 20px;
-      top: 120px;
-      background: #1a1a1a;
-      border: 1px solid #d4af37;
-      border-radius: 15px;
-      padding: 15px;
-      width: 180px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    }
-
-    .profile-box img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .profile-box h3 {
-      margin: 0;
-      color: #d4af37;
-    }
-
-    .profile-box p {
-      margin: 5px 0 0;
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    /* סיסמה */
-    #login {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 9999;
-    }
-
-    #login input {
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: none;
-      text-align: center;
-    }
-
-    #login button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #d4af37;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    #content {
-      display: none;
-    }
-
-    /* וואטסאפ */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 15px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-
-    #success {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      border: 1px solid #d4af37;
-      text-align: center;
-      border-radius: 10px;
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .profile-box {
+        position: static;
+        margin: 20px auto;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- סיסמה -->
-<div id="login">
-  <h2>כניסה לאתר מוגן</h2>
-  <input type="password" id="pass" placeholder="סיסמה">
-  <button onclick="checkPassword()">כניסה</button>
-</div>
-
-<!-- כרטיס צד -->
+<!-- פרופיל -->
 <div class="profile-box">
-  <img src="https://via.placeholder.com/200" alt="מייס מסאלחה">
+  <img src="https://via.placeholder.com/300" alt="מייס מסאלחה">
   <h3>מייס מסאלחה</h3>
   <p>יועצת ארגונית</p>
 </div>
 
-<!-- תוכן -->
-<div id="content">
-
+<!-- HEADER -->
 <header>
   <h1>מייס מסאלחה</h1>
-  <p>יועצת ארגונית | ליווי תהליכי שינוי וצמיחה</p>
+  <p>יועצת ארגונית | ליווי תהליכי שינוי, פיתוח וצמיחה</p>
 
   <a class="btn" href="#about">אודות</a>
   <a class="btn" href="#services">שירותים</a>
-  <a class="btn" href="#contact">צור קשר</a>
+  <a class="btn" href="#contact">יצירת קשר</a>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>אודות</h2>
+
   <div class="card">
-    <p>מייס מסאלחה היא יועצת ארגונית ומנחה אקדמית, בוגרת החינוך הדו-לשוני, בעלת תואר מוסמך בפיתוח וייעוץ ארגוני ותואר בוגר במנהל עסקים ויחסים בינלאומיים מהאוניברסיטה העברית בירושלים.</p>
+    מייס מסאלחה היא יועצת ארגונית ומנחה אקדמית, בוגרת החינוך הדו-לשוני,
+    בעלת תואר מוסמך בפיתוח וייעוץ ארגוני ותואר בוגר במנהל עסקים ויחסים בינלאומיים מהאוניברסיטה העברית בירושלים.
+  </div>
 
-    <p>בעבודתה עם יחידת המגוון, היא מלווה תהליכים לחיזוק מרחבים מכילים ומגוונים — החל מייעוץ אישי פרטני, דרך סדנאות קבוצתיות ועד לייעוץ ארגוני רחב.</p>
+  <div class="card">
+    במסגרת עבודתה עם יחידת המגוון, היא מלווה תהליכים לחיזוק מרחבים מכילים ומגוונים –
+    מייעוץ אישי פרטני ועד לייעוץ ארגוני מלא למוסדות אקדמיים, בתי ספר ויחידות מקצועיות.
+  </div>
 
-    <p>בנוסף, היא מובילה את תוכנית "ניווט אישי להצלחה" לפיתוח קריירה ותהליכי בחירה מקצועית.</p>
+  <div class="card">
+    בנוסף, היא מובילה את תוכנית "ניווט אישי להצלחה" לפיתוח קריירה וקבלת החלטות מקצועיות מותאמות אישית.
   </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
   <h2>תחומי התמחות</h2>
 
-  <div class="card">ייעוץ ארגוני</div>
-  <div class="card">פיתוח מנהלים</div>
-  <div class="card">שיפור תהליכים</div>
-  <div class="card">ליווי שינוי ארגוני</div>
+  <div class="card">ייעוץ ארגוני ושיפור תהליכים</div>
+  <div class="card">פיתוח והכשרת מנהלים</div>
+  <div class="card">ליווי שינויים ארגוניים</div>
+  <div class="card">שיפור ביצועים וצמיחה עסקית</div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>יצירת קשר</h2>
 
-  <p>📞 052-4491865</p>
-  <p>✉️ maysmassalha@hotmail.com</p>
+  <div class="card">
+    📞 052-4491865<br>
+    ✉️ maysmassalha@hotmail.com
+  </div>
 
-  <!-- וואטסאפ -->
   <a class="btn" href="https://wa.me/972524491865" target="_blank">
-    שלח הודעה בוואטסאפ
+    שליחה בוואטסאפ
   </a>
 
   <form onsubmit="sendForm(event)">
     <input type="text" placeholder="שם מלא" required>
     <input type="email" placeholder="אימייל" required>
-    <textarea placeholder="הודעה" required></textarea>
+    <textarea placeholder="איך אפשר לעזור?" required></textarea>
     <button type="submit">שליחה</button>
   </form>
-
-  <div id="success">✔ תודה! הפנייה נשלחה (דמו)</div>
 </section>
 
 <footer>
   © כל הזכויות שמורות | מייס מסאלחה
 </footer>
 
-</div>
-
 <script>
-function checkPassword() {
-  let password = document.getElementById("pass").value;
-
-  if (password === "1234") {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("content").style.display = "block";
-  } else {
-    alert("סיסמה שגויה");
-  }
-}
-
 function sendForm(e) {
   e.preventDefault();
-  document.getElementById("success").style.display = "block";
+  alert("תודה! הפנייה התקבלה (דמו)");
 }
 </script>
 
