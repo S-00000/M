@@ -1,154 +1,200 @@
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מייס מסאלחה | ייעוץ ארגוני</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מייס מסאלחה | ייעוץ ארגוני</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f3ee;
-      color: #2b2b2b;
-      scroll-behavior: smooth;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #f7f3ee, #ffffff);
+  color: #2b2b2b;
+  scroll-behavior: smooth;
+}
 
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, #3b2f2f, #6b4f3a);
-      color: #fff;
-      padding: 100px 20px;
-      text-align: center;
-    }
+/* LOGIN */
+#login {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #1f1a17, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+}
 
-    header h1 {
-      font-size: 48px;
-      margin: 0;
-      color: #f5e6d3;
-    }
+#login input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  margin-top: 10px;
+  width: 200px;
+}
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #e9dccb;
-    }
+#login button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  background: #a3b18a;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-    /* BUTTONS */
-    .btn {
-      display: inline-block;
-      margin: 10px 8px;
-      padding: 12px 22px;
-      background: #a3b18a;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* HEADER */
+header {
+  padding: 110px 20px;
+  text-align: center;
+  background: radial-gradient(circle at top, #6b4f3a, #2b1f1a);
+  color: #fff;
+}
 
-    .btn:hover {
-      background: #6b8f71;
-      transform: translateY(-3px);
-    }
+header h1 {
+  font-size: 52px;
+  margin: 0;
+  color: #f5e6d3;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 70px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+header p {
+  font-size: 18px;
+  color: #e9dccb;
+  margin-top: 10px;
+}
 
-    h2 {
-      color: #6b4f3a;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin: 10px 6px;
+  padding: 12px 22px;
+  background: #a3b18a;
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    /* CARDS */
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      border-right: 5px solid #a3b18a;
-      line-height: 1.7;
-    }
+.btn:hover {
+  transform: translateY(-3px);
+  background: #7f9c6a;
+}
 
-    /* PROFILE */
-    .profile-box {
-      position: fixed;
-      left: 20px;
-      top: 120px;
-      background: #fff;
-      border-radius: 18px;
-      padding: 18px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border: 1px solid #eee;
-    }
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 70px 20px;
+}
 
-    .profile-box img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #a3b18a;
-    }
+h2 {
+  color: #6b4f3a;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
 
-    .profile-box h3 {
-      margin: 10px 0 0;
-      color: #3b2f2f;
-    }
+/* CARDS */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  border-right: 5px solid #a3b18a;
+  line-height: 1.8;
+  transition: 0.3s;
+}
 
-    .profile-box p {
-      margin: 5px 0 0;
-      color: #6b6b6b;
-    }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-    /* CONTACT */
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-    }
+/* PROFILE */
+.profile-box {
+  position: fixed;
+  left: 20px;
+  top: 120px;
+  width: 210px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  border: 1px solid #eee;
+}
 
-    button {
-      width: 100%;
-      margin-top: 12px;
-      padding: 14px;
-      background: #6b4f3a;
-      border: none;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+.profile-box img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #a3b18a;
+  object-fit: cover;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #f0eae2;
-      color: #6b6b6b;
-    }
+.profile-box h3 {
+  margin: 10px 0 0;
+  color: #3b2f2f;
+}
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .profile-box {
-        position: static;
-        margin: 20px auto;
-      }
-    }
-  </style>
+.profile-box p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+/* CONTACT */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  background: #6b4f3a;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #f3efe9;
+  color: #666;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .profile-box {
+    position: static;
+    margin: 20px auto;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<!-- פרופיל -->
+<!-- LOGIN -->
+<div id="login">
+  <h2>כניסה לאתר</h2>
+  <input type="password" id="pass" placeholder="סיסמה">
+  <button onclick="checkPassword()">כניסה</button>
+</div>
+
+<div id="content">
+
+<!-- PROFILE -->
 <div class="profile-box">
   <img src="https://via.placeholder.com/300" alt="מייס מסאלחה">
   <h3>מייס מסאלחה</h3>
@@ -158,11 +204,11 @@
 <!-- HEADER -->
 <header>
   <h1>מייס מסאלחה</h1>
-  <p>ייעוץ ארגוני | ליווי תהליכי שינוי וצמיחה אנושית</p>
+  <p>ייעוץ ארגוני | צמיחה, שינוי והתפתחות ארגונית</p>
 
   <a class="btn" href="#about">אודות</a>
   <a class="btn" href="#services">שירותים</a>
-  <a class="btn" href="#contact">צור קשר</a>
+  <a class="btn" href="#contact">יצירת קשר</a>
 </header>
 
 <!-- ABOUT -->
@@ -175,12 +221,11 @@
   </div>
 
   <div class="card">
-    בעבודתה היא מלווה תהליכים של שינוי, הכלה וצמיחה ארגונית —
-    משלב אישי ועד ארגונים גדולים ומערכות חינוך ואקדמיה.
+    מלווה תהליכים של שינוי, הכלה וצמיחה – מרמת הפרט ועד ארגונים ומוסדות חינוך ואקדמיה.
   </div>
 
   <div class="card">
-    מובילה את תוכנית "ניווט אישי להצלחה" לפיתוח קריירה ובחירות מקצועיות מותאמות אישית.
+    מובילה את תוכנית "ניווט אישי להצלחה" לפיתוח קריירה וקבלת החלטות מקצועיות.
   </div>
 </section>
 
@@ -188,10 +233,10 @@
 <section id="services">
   <h2>תחומי התמחות</h2>
 
-  <div class="card">ייעוץ ארגוני ושיפור תהליכים</div>
+  <div class="card">ייעוץ ארגוני</div>
   <div class="card">פיתוח מנהלים</div>
   <div class="card">ליווי שינוי ארגוני</div>
-  <div class="card">פיתוח קריירה והכוונה מקצועית</div>
+  <div class="card">פיתוח קריירה והכוונה</div>
 </section>
 
 <!-- CONTACT -->
@@ -210,7 +255,7 @@
   <form onsubmit="sendForm(event)">
     <input type="text" placeholder="שם מלא" required>
     <input type="email" placeholder="אימייל" required>
-    <textarea placeholder="איך אפשר לעזור?" required></textarea>
+    <textarea placeholder="הודעה" required></textarea>
     <button type="submit">שליחה</button>
   </form>
 </section>
@@ -219,7 +264,19 @@
   © כל הזכויות שמורות | מייס מסאלחה
 </footer>
 
+</div>
+
 <script>
+function checkPassword() {
+  let password = document.getElementById("pass").value;
+  if (password === "1234") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  } else {
+    alert("סיסמה שגויה");
+  }
+}
+
 function sendForm(e) {
   e.preventDefault();
   alert("תודה! הפנייה התקבלה");
