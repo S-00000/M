@@ -1,30 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מייס מסאלחה | ייעוץ ארגוני</title>
+<title>Mays Massalha | Organizational Consulting</title>
 
 <style>
 body{
   margin:0;
   font-family:Arial;
-  background:linear-gradient(180deg,#f7f3ee,#ffffff);
   color:#2b2b2b;
 }
 
-/* LOGIN */
+/* 🎬 LOGIN */
 #login{
   position:fixed;
   inset:0;
-  background:linear-gradient(135deg,#2b1f1a,#000);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   z-index:9999;
   color:white;
+  text-align:center;
+  overflow:hidden;
+}
+
+#bgVideo{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
+
+#overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
+}
+
+.logo{
+  font-size:20px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+  color:#f5e6d3;
 }
 
 #login input{
@@ -32,8 +53,8 @@ body{
   margin-top:10px;
   border-radius:10px;
   border:none;
-  text-align:center;
   width:220px;
+  text-align:center;
 }
 
 #login button{
@@ -46,11 +67,16 @@ body{
   font-weight:bold;
 }
 
+/* MAIN CONTENT */
+#content{
+  display:none;
+}
+
 /* HEADER */
 header{
   padding:100px 20px;
   text-align:center;
-  background: radial-gradient(circle at top,#6b4f3a,#2b1f1a);
+  background:linear-gradient(135deg,#2b1f1a,#6b4f3a);
   color:white;
 }
 
@@ -62,15 +88,6 @@ header h1{
 
 header p{
   color:#e9dccb;
-  margin-top:10px;
-}
-
-/* LOGO */
-.logo{
-  font-size:18px;
-  margin-bottom:10px;
-  color:#a3b18a;
-  letter-spacing:2px;
 }
 
 /* BUTTONS */
@@ -83,6 +100,7 @@ header p{
   border-radius:999px;
   text-decoration:none;
   font-weight:bold;
+  cursor:pointer;
 }
 
 /* SECTIONS */
@@ -95,10 +113,10 @@ section{
 h2{ color:#6b4f3a; }
 
 .card{
-  background:white;
+  background:#fff;
   padding:20px;
-  border-radius:16px;
   margin-bottom:15px;
+  border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
   border-right:4px solid #a3b18a;
 }
@@ -109,7 +127,7 @@ h2{ color:#6b4f3a; }
   left:20px;
   top:120px;
   width:210px;
-  background:white;
+  background:#fff;
   border-radius:20px;
   padding:18px;
   text-align:center;
@@ -124,41 +142,34 @@ h2{ color:#6b4f3a; }
 }
 
 /* PERSONAL AREA */
-#panel{
+#panelLock{
   display:none;
   position:fixed;
   inset:0;
-  background:white;
-  padding:40px;
-  overflow:auto;
+  background:rgba(0,0,0,0.9);
+  color:white;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
   z-index:9998;
 }
 
-.close{
-  background:#6b4f3a;
-  color:white;
-  padding:10px 20px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-input,textarea{
-  width:100%;
+#panelLock input{
   padding:12px;
-  margin-top:10px;
   border-radius:10px;
-  border:1px solid #ddd;
+  border:none;
+  text-align:center;
+  margin-top:10px;
+  width:220px;
 }
 
 button{
-  width:100%;
-  padding:14px;
-  margin-top:12px;
+  margin-top:10px;
+  padding:12px;
+  border:none;
+  border-radius:10px;
   background:#6b4f3a;
   color:white;
-  border:none;
-  border-radius:12px;
   cursor:pointer;
 }
 
@@ -178,10 +189,18 @@ button{
 
 <body>
 
-<!-- LOGIN -->
+<!-- 🎬 LOGIN -->
 <div id="login">
-  <div class="logo">MAIS MASSALHA</div>
+  <video autoplay muted loop id="bgVideo">
+    <source src="https://cdn.coverr.co/videos/coverr-office-work-clip-7611/1080p.mp4" type="video/mp4">
+  </video>
+
+  <div id="overlay"></div>
+
+  <div class="logo">Mays Massalha | Organizational Consulting</div>
+
   <h2>כניסת לקוחות</h2>
+
   <input id="user" placeholder="שם משתמש">
   <input id="pass" type="password" placeholder="סיסמה">
   <button onclick="login()">כניסה</button>
@@ -190,74 +209,53 @@ button{
 <!-- PROFILE -->
 <div class="profile">
   <img src="https://via.placeholder.com/300">
-  <h3>מייס מסאלחה</h3>
-  <p>יועצת ארגונית</p>
+  <h3>Mays Massalha</h3>
+  <p>Organizational Consultant</p>
 </div>
 
 <!-- MAIN -->
 <div id="content">
 
 <header>
-  <div class="logo">ORGANIZATIONAL CONSULTING</div>
-  <h1>מייס מסאלחה</h1>
+  <h1>Mays Massalha</h1>
   <p>ייעוץ ארגוני | שינוי | צמיחה | פיתוח</p>
 
   <a class="btn" href="#about">אודות</a>
   <a class="btn" href="#services">שירותים</a>
-  <a class="btn" href="#contact">יצירת קשר</a>
   <a class="btn" onclick="openPanel()">אזור אישי</a>
 </header>
 
 <section id="about">
-<h2>אודות</h2>
-
-<div class="card">יועצת ארגונית ומנחה אקדמית...</div>
-<div class="card">מלווה תהליכים של שינוי וצמיחה...</div>
-<div class="card">מובילה תוכנית ניווט אישי להצלחה...</div>
+  <div class="card">
+    יועצת ארגונית ומנחה אקדמית עם ניסיון בליווי תהליכי שינוי וצמיחה ארגונית.
+  </div>
 </section>
 
 <section id="services">
-<h2>שירותים</h2>
-<div class="card">ייעוץ ארגוני</div>
-<div class="card">פיתוח מנהלים</div>
-<div class="card">ליווי שינוי</div>
+  <div class="card">ייעוץ ארגוני</div>
+  <div class="card">פיתוח מנהלים</div>
+  <div class="card">ליווי תהליכי שינוי</div>
 </section>
 
 <section id="contact">
-<h2>יצירת קשר</h2>
+  <div class="card">
+    📞 052-4491865<br>
+    ✉️ maysmassalha@hotmail.com
+  </div>
 
-<div class="card">
-📞 052-4491865<br>
-✉️ maysmassalha@hotmail.com
-</div>
-
-<a class="btn" href="https://wa.me/972524491865">וואטסאפ</a>
-
-<form>
-<input placeholder="שם">
-<input placeholder="אימייל">
-<textarea placeholder="הודעה"></textarea>
-<button type="button">שליחה</button>
-</form>
+  <a class="btn" href="https://wa.me/972524491865">וואטסאפ</a>
 </section>
 
 </div>
 
-<!-- PERSONAL AREA -->
-<div id="panel">
-  <button class="close" onclick="closePanel()">סגירה</button>
+<!-- 🔐 PERSONAL AREA -->
+<div id="panelLock">
+  <h2>אזור אישי ללקוחות</h2>
 
-  <h2>אזור אישי ללקוח</h2>
+  <input id="clientUser" placeholder="שם משתמש">
+  <input id="clientPass" type="password" placeholder="סיסמה">
 
-  <div class="card">
-    ברוך הבא! כאן יוצגו מסמכים, משימות ועדכונים אישיים.
-  </div>
-
-  <div class="card">
-    📄 סיכום פגישה אחרונה  
-    📌 משימות פתוחות  
-    📁 קבצים אישיים
-  </div>
+  <button onclick="checkClient()">כניסה</button>
 </div>
 
 <a class="whatsapp" href="https://wa.me/972524491865">WhatsApp</a>
@@ -267,19 +265,28 @@ function login(){
   let u=document.getElementById("user").value;
   let p=document.getElementById("pass").value;
 
-  if(u==="client" && p==="1234"){
+  if(u==="Mays Massalha" && p==="1234"){
     document.getElementById("login").style.display="none";
-  } else {
-    alert("שגיאה בפרטים");
+    document.getElementById("content").style.display="block";
+  }else{
+    alert("פרטי התחברות שגויים");
   }
 }
 
 function openPanel(){
-  document.getElementById("panel").style.display="block";
+  document.getElementById("panelLock").style.display="flex";
 }
 
-function closePanel(){
-  document.getElementById("panel").style.display="none";
+function checkClient(){
+  let u=document.getElementById("clientUser").value;
+  let p=document.getElementById("clientPass").value;
+
+  if(u==="Mays Massalha" && p==="1234"){
+    alert("גישה מאושרת לאזור האישי");
+    document.getElementById("panelLock").style.display="none";
+  }else{
+    alert("פרטי כניסה שגויים");
+  }
 }
 </script>
 
