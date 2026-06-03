@@ -9,11 +9,10 @@
 body{
   margin:0;
   font-family:Arial;
-  background:#F6F1E8;
-  color:#4A4A4A;
+  background:#f6f1e8;
 }
 
-/* 🔐 LOGIN */
+/* 🔐 LOGIN (יוקרתי) */
 #login{
   position:fixed;
   inset:0;
@@ -21,8 +20,8 @@ body{
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
   color:white;
+  text-align:center;
 
   background:url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80")
   center/cover no-repeat;
@@ -32,17 +31,15 @@ body{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,0.55);
-  z-index:0;
 }
 
 #login *{
   position:relative;
-  z-index:1;
 }
 
 .logo{
-  font-size:20px;
   color:#C6A15B;
+  font-size:20px;
   margin-bottom:10px;
   letter-spacing:1px;
 }
@@ -50,8 +47,8 @@ body{
 input{
   padding:12px;
   margin-top:10px;
-  border-radius:10px;
   border:none;
+  border-radius:10px;
   width:220px;
   text-align:center;
 }
@@ -63,8 +60,8 @@ button{
   border-radius:10px;
   background:#2F4F3E;
   color:white;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
 }
 
 /* MAIN */
@@ -74,16 +71,20 @@ button{
 
 /* HEADER */
 header{
-  padding:100px 20px;
+  padding:90px 20px;
   text-align:center;
-  background:linear-gradient(135deg,#3A2E2A,#2F4F3E);
+  background:linear-gradient(135deg,#2F4F3E,#3A2E2A);
   color:white;
 }
 
 header h1{
+  color:#C6A15B;
   font-size:48px;
   margin:0;
-  color:#C6A15B;
+}
+
+header p{
+  color:#E9DCCB;
 }
 
 /* BUTTONS */
@@ -92,10 +93,17 @@ header h1{
   margin:10px 6px;
   padding:12px 20px;
   background:#C6A15B;
-  color:#2B2B2B;
+  color:#2b2b2b;
   border-radius:999px;
   text-decoration:none;
   font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px;
 }
 
 /* CARDS */
@@ -115,8 +123,8 @@ header h1{
   top:120px;
   width:210px;
   background:white;
-  border-radius:20px;
   padding:18px;
+  border-radius:20px;
   text-align:center;
 }
 
@@ -128,15 +136,45 @@ header h1{
   border:4px solid #C6A15B;
 }
 
-/* PANEL */
+/* PANEL (אזור אישי יוקרה) */
 #panel{
   display:none;
   position:fixed;
   inset:0;
-  background:white;
-  padding:40px;
-  overflow:auto;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
   z-index:9999;
+  justify-content:center;
+  align-items:center;
+}
+
+/* תיבה מרכזית */
+.panel-box{
+  width:90%;
+  max-width:500px;
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* כותרת אזור אישי */
+.panel-box h2{
+  color:#2F4F3E;
+  margin-bottom:10px;
+}
+
+/* שדות בתוך אזור אישי */
+.panel-box input{
+  width:100%;
+  margin-top:10px;
+}
+
+/* כפתור יוקרה */
+.panel-btn{
+  background:#C6A15B;
+  color:#2b2b2b;
 }
 </style>
 </head>
@@ -171,62 +209,59 @@ header h1{
   <p>ייעוץ ארגוני | שינוי | צמיחה</p>
 
   <a class="btn" href="#about">אודות</a>
-  <a class="btn" href="#contact">צור קשר</a>
   <a class="btn" onclick="openPanel()">אזור אישי</a>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
 
   <div class="card">
-    <h3>אודות</h3>
+    <h3>🌿 אודות</h3>
     יועצת ארגונית ומנחה אקדמית המתמחה בליווי תהליכי שינוי ופיתוח ארגוני.
   </div>
 
   <div class="card">
-    <h3>חזון</h3>
+    <h3>🎯 חזון</h3>
     יצירת ארגונים אנושיים, חכמים ומדויקים יותר.
   </div>
 
   <div class="card">
-    <h3>גישה מקצועית</h3>
+    <h3>🧠 גישה מקצועית</h3>
     שילוב בין עומק אנושי, חשיבה מערכתית ויישום פרקטי.
   </div>
 
-</section>
-
-<section id="contact">
   <div class="card">
-    <h3>יצירת קשר</h3>
-
-    <input placeholder="שם מלא">
-    <input placeholder="טלפון">
-    <input placeholder="אימייל">
-    <textarea rows="4" placeholder="הודעה"></textarea>
-
-    <button>שליחה</button>
+    <h3>💼 תחומי התמחות</h3>
+    ✔ ייעוץ ארגוני<br>
+    ✔ ליווי מנהלים<br>
+    ✔ שינוי ארגוני<br>
+    ✔ פיתוח קריירה
   </div>
+
 </section>
 
 </div>
 
-<!-- 🔐 PANEL -->
+<!-- 🔐 PANEL יוקרתי -->
 <div id="panel">
-  <button onclick="closePanel()">סגור</button>
+  <div class="panel-box">
 
-  <h2>אזור אישי</h2>
-
-  <div class="card">
-    <h3>כניסה לאזור אישי</h3>
+    <h2>אזור אישי יוקרתי</h2>
+    <p>נא להכניס פרטי התחברות</p>
 
     <input id="clientUser" placeholder="שם משתמש">
     <input id="clientPass" type="password" placeholder="סיסמה">
 
-    <button onclick="checkClient()">כניסה</button>
-  </div>
+    <button class="panel-btn" onclick="checkClient()">כניסה</button>
 
-  <div id="clientArea" class="card" style="display:none;">
-    ✔ ברוך הבא לאזור האישי שלך<br>
-    כאן יוצגו מסמכים ועדכונים אישיים.
+    <div id="clientArea" class="card" style="display:none; margin-top:15px;">
+      ✔ ברוך הבא לאזור האישי שלך<br>
+      כאן יוצגו מסמכים ועדכונים אישיים.
+    </div>
+
+    <br>
+    <button onclick="closePanel()">סגור</button>
+
   </div>
 </div>
 
@@ -244,7 +279,7 @@ function login(){
 }
 
 function openPanel(){
-  document.getElementById("panel").style.display="block";
+  document.getElementById("panel").style.display="flex";
 }
 
 function closePanel(){
@@ -258,7 +293,7 @@ function checkClient(){
   if(u==="Mays Massalha" && p==="1234"){
     document.getElementById("clientArea").style.display="block";
   } else {
-    alert("שם משתמש או סיסמה שגויים");
+    alert("שגיאה בפרטים");
   }
 }
 </script>
